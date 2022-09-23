@@ -140,7 +140,7 @@ const gameStart = (status = null) => {
   // start timer
 
   pointsTracking = 0;
-  actualTimer = 3;
+  actualTimer = 30;
   timer.innerHTML = actualTimer;
 
   correctAnswer = "";
