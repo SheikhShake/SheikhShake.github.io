@@ -1,27 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./code.css"/>
+    <style>
+      @import url("http://fonts.cdnfonts.com/css/pokemon-solid");
+    </style>
 
-</head>
-<body>
-    <h1>pokemon game</h1>
-    <div><button id="startButton">start</button></div>
-    <div><button id="restartButton">restart</button></div>
-    <div>points <span id="score"></span></div>
-    <div>timer <span id="timer"></span></div>
-    <img class="test" id="sample" src="" height="300"  width="300"/>
-    <h2 id="name1"></h2>
-    <h2 id="name2"></h2>
-    <h2 id="name3"></h2>
-    <p id="sample2"></p>
+    <link rel="stylesheet" type="text/css" href="./code.css" />
+  </head>
+  <body>
+    <div id="startPage">
+      <h1 class="depth">Who Is That Pokemon?</h1>
+      <!-- add difficulty selection -->
+      <!-- use radio -->
+      <div class="center"><button id="startButton">start</button></div>
+    </div>
+    <div id="gamePage" class="hidden">
+      <!-- <div id="boxTimer"></div> -->
 
+      <img
+        class="pokemonImage"
+        id="pokemonImage"
+        src=""
+        height="300"
+        width="300"
+      />
+      <div class="center">
+        <button id="name1" class="answer"></button>
+        <button id="name2" class="answer"></button>
+        <button id="name3" class="answer"></button>
+      </div>
+
+      <div class="specialFont center pointsTimerContainer">
+        POINTS <span id="score"></span> | TIMER <span id="timer"></span>
+      </div>
+
+      <div class="center pokeballContainer">
+        <img class="pokeball" id="ball1" src="./pokeball.png" />
+        <img class="pokeball" id="ball2" src="./pokeball.png" />
+        <img class="pokeball" id="ball3" src="./pokeball.png" />
+        <img class="pokeball" id="ball4" src="./pokeball.png" />
+        <img class="pokeball" id="ball5" src="./pokeball.png" />
+      </div>
+    </div>
+
+    <div id="resultsPage" class="hidden">
+      <div class="center finalScoreContainer">
+        <p>You have scored <span id="finalScore"></span> points!!!</p>
+      </div>
+      <div class="center"><button id="restartButton">restart</button></div>
+    </div>
 
     <script src="./pokemon.js" type="text/javascript"></script>
     <script src="./app.js" type="text/javascript"></script>
-</body>
+  </body>
 </html>
