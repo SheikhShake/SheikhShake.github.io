@@ -26,6 +26,25 @@ body {
   margin-right: auto;
 }
 
+#startPage {
+  padding-top: 100px;
+}
+
+#dim {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+#gamePage {
+  padding-top: 100px;
+}
+
 .hidden {
   display: none;
 }

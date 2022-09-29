@@ -32,6 +32,7 @@ const name2 = document.getElementById("name2");
 const name3 = document.getElementById("name3");
 const restartButton = document.getElementById("restartButton");
 const finalScore = document.getElementById("finalScore");
+// const answerImage
 
 const points = document.getElementById("score");
 const timer = document.getElementById("timer");
@@ -45,7 +46,10 @@ const pokeBall5 = document.getElementById("ball5");
 
 // sounds
 
-const sampleSound = new Audio("./sound.mp3");
+const sampleSound = new Audio("./pokemonBattle.mp3");
+const correctSound = new Audio("./correctAnswer.mp3");
+const wrongSound = new Audio("./wrongAnswer.mp3");
+const gameOverSound = new Audio("./gameOverSound.mp3");
 
 let pointsTracking,
   actualTimer,
@@ -56,6 +60,7 @@ let pointsTracking,
 startButton.addEventListener("click", () => {
   gameStart();
   startButton.hidden = true;
+  //dim background
 });
 
 restartButton.addEventListener("click", () => {
@@ -64,15 +69,15 @@ restartButton.addEventListener("click", () => {
 });
 
 name1.addEventListener("click", () => {
-  checkAnswer(name1.innerHTML);
+  checkAnswer(name1);
 });
 
 name2.addEventListener("click", () => {
-  checkAnswer(name2.innerHTML);
+  checkAnswer(name2);
 });
 
 name3.addEventListener("click", () => {
-  checkAnswer(name3.innerHTML);
+  checkAnswer(name3);
 });
 
 const buttonStatus = (status) => {
@@ -134,6 +139,7 @@ const game = () => {
 };
 
 const gameStart = (status = null) => {
+  sampleSound.currentTime = 0;
   sampleSound.play();
 
   // on click - start game
@@ -145,7 +151,10 @@ const gameStart = (status = null) => {
 
   correctAnswer = "";
   life = 5;
-  if (status === "restart") clearInterval(timerInterval);
+
+  clearInterval(timerInterval);
+  gameOverSound.pause();
+
   console.log(status);
   game();
   timerInterval = setInterval(function () {
@@ -188,13 +197,14 @@ const checkAnswer = (userInput) => {
   console.log(userInput);
   console.log(correctAnswer);
 
-  if (userInput === correctAnswer) {
+  if (userInput.innerHTML === correctAnswer) {
     console.log("correct");
     pointsTracking += 5;
     actualTimer += 3;
     pokemonImage.classList.remove("pokemonImage");
 
-    document.querySelector("body").style.background = "green";
+    userInput.style.background = "green";
+    correctSound.play();
 
     // show "CORRECT" popup
   } else {
@@ -236,7 +246,8 @@ const checkAnswer = (userInput) => {
       gameEnd();
     }
     pokemonImage.classList.remove("pokemonImage");
-    document.querySelector("body").style.background = "red";
+    userInput.style.background = "red";
+    wrongSound.play();
 
     // show "WRONG" popup
   }
@@ -244,7 +255,7 @@ const checkAnswer = (userInput) => {
   points.innerHTML = pointsTracking;
   setTimeout(() => {
     if (life !== 0) {
-      nextRound();
+      nextRound(userInput);
     }
   }, 1500);
 
@@ -255,7 +266,8 @@ const checkAnswer = (userInput) => {
   //
 };
 
-const nextRound = () => {
+const nextRound = (userInput) => {
+  userInput.style.background = "white";
   buttonStatus("unlock");
   game();
 };
@@ -277,6 +289,8 @@ const gameEnd = () => {
 
   //show results page
   resultsPage.classList.remove("hidden");
+  sampleSound.pause();
+  gameOverSound.play();
 };
 
 // add audio
