@@ -20,9 +20,110 @@
   <body>
     <div id="startPage">
       <h1 class="depth">Who Is That Pokemon?</h1>
-      <!-- add difficulty selection -->
-      <!-- use radio -->
       <div class="center"><button id="startButton">start</button></div>
+      <div>
+        <div class="container">
+          <div style="max-width: 360px; margin: 10px auto">
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                checked
+                value="1"
+              />
+              <label for="switch" name="switch">GEN 1</label>
+            </div>
+
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                value="2"
+              />
+              <label for="switch" name="switch">GEN 2</label>
+            </div>
+
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                value="3"
+              />
+              <label for="switch" name="switch">GEN 3</label>
+            </div>
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                value="4"
+              />
+              <label for="switch" name="switch">GEN 4</label>
+            </div>
+
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                value="5"
+              />
+              <label for="switch" name="switch">GEN 5</label>
+            </div>
+
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                value="6"
+              />
+              <label for="switch" name="switch">GEN 6</label>
+            </div>
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                value="7"
+              />
+              <label for="switch" name="switch">GEN 7</label>
+            </div>
+
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                class="difficulty"
+                value="8"
+              />
+              <label for="switch" name="switch">GEN 8</label>
+            </div>
+
+            <div class="tab">
+              <input
+                type="checkbox"
+                name="all"
+                id="switch"
+                class="difficulty"
+                onclick="selectAll(checked)"
+              />
+              <label for="switch" name="switch">&nbsp;&nbsp;&nbsp;ALL</label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="dim"></div>
     <div id="gamePage" class="hidden">

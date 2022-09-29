@@ -8,7 +8,7 @@ body {
   background-image: url("./pokemon_background.jpeg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   min-height: 100vh;
 }
 
@@ -128,19 +128,11 @@ h1 {
 }
 
 .finalScoreContainer {
-  font-family: "Bungee Spice", cursive;
-
   padding-top: 300px;
   font-size: 40px;
 }
 #restartButton {
   margin-top: 30px;
-}
-
-#score,
-#timer,
-.specialFont {
-  font-family: "Bungee Spice", cursive;
 }
 
 .pokeballContainer {
@@ -150,4 +142,84 @@ h1 {
 .pointsTimerContainer {
   font-size: 40px;
   margin-top: 30px;
+}
+
+.tab {
+  border-radius: 20px;
+  width: 110px;
+  height: 40px;
+  overflow: hidden;
+  margin: 5px;
+  background-color: white;
+  float: left;
+  position: relative;
+}
+
+.tab input[type="checkbox"] {
+  appearance: none;
+  border-radius: 15px;
+  height: 30px;
+  width: 100px;
+  margin: 5px;
+  background-color: rgba(115, 136, 140, 1);
+  outline: none;
+  transition: background-color 0.3s;
+}
+.tab input[type="checkbox"]:checked {
+  background-color: rgba(143, 159, 163, 1);
+  transition: background-color 0.3s;
+}
+.tab input[type="checkbox"]::before {
+  display: block;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  margin: 7px;
+  background-color: white;
+  content: "";
+  transition: width 0.5s;
+}
+.tab input[type="checkbox"]:checked::before {
+  background-color: white;
+  margin: 7px;
+  width: 85px;
+  transition: width 0.5s;
+  content: "";
+  overflow: hidden;
+}
+.opt3 input[type="checkbox"] {
+  appearance: none;
+  border-radius: 15px;
+  height: 30px;
+  width: 100px;
+  margin: 5px;
+  background-color: rgba(115, 136, 140, 1);
+  outline: none;
+  transition: background-color 0.3s;
+}
+.opt3 input[type="checkbox"]:checked {
+  background-color: rgba(143, 159, 163, 1);
+  transition: background-color 0.3s;
+}
+.opt3 input[type="checkbox"]::before {
+  display: block;
+  position: relative;
+  height: 15px;
+  width: 15px;
+  border-radius: 15px;
+  margin: 7px;
+  background-color: white;
+  content: "";
+  transition: left 0.5s;
+}
+
+label {
+  font-size: 1rem;
+  color: black;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 39px;
+  pointer-events: none;
 }
